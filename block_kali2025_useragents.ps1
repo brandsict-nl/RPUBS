@@ -8,7 +8,6 @@ Add-WebConfigurationProperty -PSPath "IIS:\" `
     -Name "." `
     -Value @{
         name = $ruleName
-        denyStrings = @("bot", "crawler")  # Add User-Agent strings to block
     }
 
 # Configure the rule to apply to the User-Agent header
@@ -42,4 +41,5 @@ Add-WebConfigurationProperty -PSPath "IIS:\" `
     -Filter "system.webServer/security/requestFiltering/filteringRules/filteringRule[@name='$ruleName']/denyStrings" `
     -Name "." `
     -Value @{string="gobuster"} `
+
     -Force
