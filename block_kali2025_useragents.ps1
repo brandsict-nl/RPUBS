@@ -41,5 +41,29 @@ Add-WebConfigurationProperty -PSPath "IIS:\" `
     -Filter "system.webServer/security/requestFiltering/filteringRules/filteringRule[@name='$ruleName']/denyStrings" `
     -Name "." `
     -Value @{string="gobuster"} `
-
     -Force
+
+# davtest
+# useragent: DAV.pm/v0.50
+Add-WebConfigurationProperty -PSPath "IIS:\" `
+    -Filter "system.webServer/security/requestFiltering/filteringRules/filteringRule[@name='$ruleName']/denyStrings" `
+    -Name "." `
+    -Value @{string="DAV.pm"} `
+    -Force	
+	
+# WhatWeb
+# useragent: Whatweb 0.5.5
+Add-WebConfigurationProperty -PSPath "IIS:\" `
+    -Filter "system.webServer/security/requestFiltering/filteringRules/filteringRule[@name='$ruleName']/denyStrings" `
+    -Name "." `
+    -Value @{string="WhatWeb"} `
+    -Force	
+	
+# Wpscan 3.2.28
+# useragent: WPScan+v3.8.28+(https://wpscan.com/wordpress-security-scanner)
+Add-WebConfigurationProperty -PSPath "IIS:\" `
+    -Filter "system.webServer/security/requestFiltering/filteringRules/filteringRule[@name='$ruleName']/denyStrings" `
+    -Name "." `
+    -Value @{string="WPScan"} `
+    -Force	
+	
